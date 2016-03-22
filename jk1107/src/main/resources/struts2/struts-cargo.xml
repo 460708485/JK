@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+<struts>
+	<package name="contract" namespace="/contract" extends="system">
+		<action name="contractAction_*" class="cn.itcast.web.struts2.cargo.contract.ContractAction" method="{1}">
+			<result name="pview">/cargo/contract/jContractView.jsp</result>
+			<result name="plist">/cargo/contract/jContractList.jsp</result>
+			<result name="pcreate">/cargo/contract/jContractCreate.jsp</result>
+			<result name="pupdate">/cargo/contract/jContractUpdate.jsp</result>
+		</action>
+		<action name="contractProductAction_*" class="cn.itcast.web.struts2.cargo.contract.ContractProductAction" method="{1}">
+			<result name="pcreate">/cargo/contract/jContractProductCreate.jsp</result>
+			<result name="pupdate">/cargo/contract/jContractProductUpdate.jsp</result>
+		</action>
+		<action name="extCproductAction_*" class="cn.itcast.web.struts2.cargo.contract.ExtCproductAction" method="{1}">
+			<result name="pcreate">/cargo/contract/jExtCproductCreate.jsp</result>
+			<result name="pupdate">/cargo/contract/jExtCproductUpdate.jsp</result>
+		</action>
+	</package>
+	<package name="contracthis" namespace="/contracthis" extends="system">
+		<action name="contractHisAction_*" class="cn.itcast.web.struts2.cargo.contracthis.ContractHisAction" method="{1}">
+			<result name="pview">/cargo/contracthis/jContractHisView.jsp</result>
+			<result name="plist">/cargo/contracthis/jContractHisList.jsp</result>
+		</action>
+	</package>	
+	<package name="outproduct" namespace="/outproduct" extends="system">
+		<action name="outProductAction_*" class="cn.itcast.web.struts2.cargo.outproduct.OutProductAction" method="{1}">
+			<result name="pedit">/cargo/outproduct/jOutProduct.jsp</result>
+		</action>
+	</package>
+	<package name="export" namespace="/export" extends="system">
+		<action name="exportAction_*" class="cn.itcast.web.struts2.cargo.export.ExportAction" method="{1}">
+			<result name="pcontractlist">/cargo/export/jContractList.jsp</result>
+			<result name="pview">/cargo/export/jExportView.jsp</result>
+			<result name="pviewinfo">/cargo/export/jExportViewInfo.jsp</result>
+			<result name="plist">/cargo/export/jExportList.jsp</result>
+			<result name="pupdate">/cargo/export/jExportUpdate.jsp</result>
+		</action>
+	</package>	
+	<package name="packinglist" namespace="/packinglist" extends="system">
+		<action name="packingListAction_*" class="cn.itcast.web.struts2.cargo.packinglist.PackingListAction" method="{1}">
+			<result name="pview">/cargo/packinglist/jPackingListView.jsp</result>
+			<result name="plist">/cargo/packinglist/jPackingListList.jsp</result>
+			<result name="pcreate">/cargo/packinglist/jPackingListCreate.jsp</result>
+			<result name="pupdate">/cargo/packinglist/jPackingListUpdate.jsp</result>
+		</action>
+	</package>	
+	<package name="shippingorder" namespace="/shippingorder" extends="system">
+		<action name="shippingOrderAction_*" class="cn.itcast.web.struts2.cargo.shippingorder.ShippingOrderAction" method="{1}">
+			<result name="pedit">/cargo/shippingorder/jShippingOrderEdit.jsp</result>
+		</action>
+	</package>	
+</struts>

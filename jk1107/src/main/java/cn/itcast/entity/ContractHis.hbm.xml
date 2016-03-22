@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+   
+<hibernate-mapping package="cn.itcast.entity">
+	<class name="ContractHis" table="CONTRACT_HIS_C">
+		<id name="id" type="string" column="CONTRACT_ID">
+			<generator class="assigned"></generator>
+		</id>
+		<property name="offeror" column="OFFEROR" type="string" />
+		<property name="contractNo" column="CONTRACT_NO" type="string" />
+		<property name="signingDate" column="SIGNING_DATE" type="timestamp"/>
+		<property name="inputBy" column="INPUT_BY" type="string" />
+		<property name="checkBy" column="CHECK_BY" type="string" />
+		<property name="inspector" column="INSPECTOR" type="string" />
+		<property name="totalAmount" column="TOTAL_AMOUNT" type="big_decimal" />
+		
+		<property name="crequest" column="REQUEST" type="string" />
+		<property name="customName" column="CUSTOM_NAME" type="string"/>
+		<property name="shipTime" column="SHIP_TIME" type="timestamp"/>
+		<property name="importNum" column="IMPORT_NUM" type="integer" />
+		<property name="deliveryPeriod" column="DELIVERY_PERIOD" type="timestamp"/>
+		<property name="remark" column="REMARK" type="string" />
+		<property name="tradeTerms" column="TRADE_TERMS" type="string" />
+		<property name="printStyle" column="PRINT_STYLE" type="string" />
+		
+		<property name="oldState" column="OLD_STATE" type="integer"/>
+		<property name="state" column="STATE" type="integer"/>
+		<property name="outState" column="OUT_STATE" type="integer"/>
+				
+		<property name="createBy" type="string" column="CREATE_BY"/>
+		<property name="createDept" type="string" column="CREATE_DEPT"/>
+		<property name="createTime" type="timestamp" column="CREATE_TIME"/>
+
+		<!-- Associations -->
+		<set name="contractProductHiss" inverse="true" cascade="all" lazy="false" order-by="ORDER_NO">
+			<key>
+				<column name="CONTRACT_ID" />
+			</key>
+			<one-to-many class="cn.itcast.entity.ContractProductHis" />
+		</set>
+	</class>
+</hibernate-mapping>

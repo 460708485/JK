@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<package name="baseinfo" namespace="/baseinfo" extends="struts-default">
+		<action name="sysCodeAction_*" class="cn.itcast.web.struts2.baseinfo.syscode.SysCodeAction" method="{1}">
+			<result name="pedit">/baseinfo/syscode/jSysCodeEdit.jsp</result>
+		</action>
+	</package>
+	<package name="hpa" namespace="/hpa" extends="struts-default">
+		<action name="hpaAction_*" class="cn.itcast.web.struts2.baseinfo.hpa.HpaAction" method="{1}">
+		</action>
+	</package>
+</struts>

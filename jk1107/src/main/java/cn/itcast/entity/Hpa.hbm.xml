@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.entity.Hpa" table="hpa_normal_tissue_csv">
+		<id name="id" column="id" type="string">
+			<generator class="uuid"/>
+		</id>
+		<property name="breast" column="breast" type="string"/>
+		<property name="adipocytes" column="adipocytes" type="string"/>
+		<property name="Negative" column="Negative" type="string"/>
+		<property name="Staining" column="Staining" type="string"/>
+		<property name="Supportive" column="Supportive" type="string"/>
+	</class>
+</hibernate-mapping>   

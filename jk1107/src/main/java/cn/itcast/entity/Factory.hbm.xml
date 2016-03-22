@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+	<class name="cn.itcast.entity.Factory" table="FACTORY_C">
+		<id name="id" column="FACTORY_ID" type="string">
+			<generator class="uuid"/>
+		</id>
+		<property name="ctype" column="CTYPE" type="string"/>
+		<property name="fullName" column="FULL_NAME" type="string"/>
+		<property name="factoryName" column="FACTORY_NAME" type="string"/>
+		<property name="contractor" column="CONTRACTOR" type="string"/>
+		<property name="phone" column="PHONE" type="string"/>
+		<property name="mobile" column="MOBILE" type="string"/>
+		<property name="fax" column="FAX" type="string"/>
+		<property name="inspector" column="INSPECTOR" type="string"/>
+		<property name="cnote" column="CNOTE" type="string"/>
+		<property name="orderNo" column="ORDER_NO" type="integer"/>
+		<property name="state" column="STATE" type="integer"/>
+		
+		<property name="createBy" column="CREATE_BY" type="string"/>
+		<property name="createDept" column="CREATE_DEPT" type="string"/>
+		<property name="createTime" column="CREATE_TIME" type="timestamp"/>
+	</class>
+</hibernate-mapping>   

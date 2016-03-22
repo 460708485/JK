@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+
+<hibernate-mapping package="cn.itcast.entity">
+	<class name="Export" table="EXPORT_C">
+
+		<id name="id" type="string" column="EXPORT_ID" length="40">
+			<generator class="uuid" />
+		</id>
+		
+		<property name="contractIds" column="CONTRACT_IDS" type="string" />
+		<property name="customerContract" column="CUSTOMER_CONTRACT" type="string" />
+
+		<property name="inputDate" column="INPUT_DATE" type="timestamp" />
+		<property name="consignee" column="CONSIGNEE" type="string" />
+		<property name="lcno" column="LCNO" type="string" />
+		<property name="marks" column="MARKS" type="string" />
+		<property name="shipmentPort" column="SHIPMENT_PORT" type="string" />
+		<property name="destinationPort" column="DESTINATION_PORT" type="string" />
+		<property name="transportMode" column="TRANSPORT_MODE" type="string" />
+		<property name="priceCondition" column="PRICE_CONDITION" type="string" />
+		<property name="remark" column="REMARK" type="string" />
+
+		<property name="boxNum" column="BOX_NUM" type="integer" />
+		<property name="cnumber" column="CNUMBER" type="integer" />
+		<property name="packingUnit" column="PACKING_UNIT" type="string" />
+		
+		<property name="grossWeight" column="GROSS_WEIGHT" type="big_decimal" />
+		<property name="netWeight" column="NET_WEIGHT" type="big_decimal" />
+
+		<property name="sizeLength" column="SIZE_LENGTH" type="big_decimal" />
+		<property name="sizeWidth" column="SIZE_WIDTH" type="big_decimal" />
+		<property name="sizeHeight" column="SIZE_HEIGHT" type="big_decimal" />
+		<property name="csize" column="CSIZE" type="big_decimal" />
+
+		<property name="amount" column="AMOUNT" type="big_decimal" />		
+		<property name="noTax" column="NO_TAX" type="big_decimal" />
+		<property name="tax" column="TAX" type="big_decimal" />
+		<property name="costPrice" column="COST_PRICE" type="big_decimal" />
+		<property name="costTax" column="COST_TAX" type="big_decimal" />
+		
+		<property name="state" column="STATE" type="integer"/>
+		
+        <property name="createBy" column="CREATE_BY" type="string" />
+        <property name="createDept" column="CREATE_DEPT" type="string" />
+		<property name="createTime" column="CREATE_TIME" type="timestamp" />
+
+		<!-- Associations -->
+
+		<set name="exportProduct" inverse="true" cascade="all" lazy="false" order-by="ORDER_NO">
+			<key>
+				<column name="EXPORT_ID" />
+			</key>
+			<one-to-many class="cn.itcast.entity.ExportProduct" />
+		</set>	
+	</class>
+</hibernate-mapping>

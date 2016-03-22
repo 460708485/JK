@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<taglib xmlns="http://java.sun.com/xml/ns/j2ee"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-jsptaglibrary_2_0.xsd"
+version="2.0">
+    
+<description>my functions library</description>
+<display-name>my functions</display-name>
+<tlib-version>1.0</tlib-version>
+<short-name>queal</short-name>
+<uri>http://www.oschina.net/queal</uri>
+
+<function>
+<name>coverNull</name>
+<function-class>cn.itcast.web.common.util.UtilFuns</function-class>
+<function-signature>java.lang.String ConvertNull(java.lang.String)</function-signature>
+</function>
+
+<function>
+<name>htmlReplaceAll</name>
+<function-class>cn.itcast.web.common.util.UtilFuns</function-class>
+<function-signature>java.lang.String htmlReplaceAll(java.lang.String)</function-signature>
+</function>
+
+<function>
+<name>htmlNewline</name>
+<function-class>cn.itcast.web.common.util.UtilFuns</function-class>
+<function-signature>java.lang.String htmlNewline(java.lang.String)</function-signature>
+</function>
+
+<function>
+<name>formatDateTimeCN</name>
+<function-class>cn.itcast.web.common.util.UtilFuns</function-class>
+<function-signature>java.lang.String formatDateTimeCN(java.lang.String)</function-signature>
+</function>
+
+</taglib>

@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+	<!-- 基础配置 -->
+	<constant name="struts.devMode" value="true"/>
+	<constant name="struts.ui.theme" value="simple"/>
+	<constant name="struts.objectFactory" value="spring"/>
+	
+	<!-- 自定义拦截器 -->
+	<package name="system" namespace="/system" extends="struts-default">
+		<interceptors>
+			<interceptor name="timeInspector" class="cn.itcast.web.inspector.TimeInspector">
+			</interceptor>
+			<interceptor-stack name="systemStack">
+				<interceptor-ref name="defaultStack"></interceptor-ref>
+				<interceptor-ref name="timeInspector"></interceptor-ref>
+			</interceptor-stack>
+		</interceptors>
+		
+		<!-- 默认拦截器配置 覆盖struts2中的默认拦截器 -->
+		<default-interceptor-ref name="systemStack"/>		
+	</package>
+	
+	<!-- 分解配置文件 -->
+	<include file="struts2/struts-baseinfo.xml"/>
+	<include file="struts2/struts-basicinfo.xml"/>
+	<include file="struts2/struts-cargo.xml"/>
+	<include file="struts2/struts-run.xml"/>
+</struts>

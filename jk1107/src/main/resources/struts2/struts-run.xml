@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.1.7//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+  	<package name="stat" namespace="/run" extends="struts-default">
+  		<action name="sysStatAction_*" method="{1}" class="cn.itcast.web.struts2.run.stat.SysStatAction">
+  			<result name="factorysale">/run/stat/jStat.jsp?forward=factorysale</result>
+  			<result name="productsale">/run/stat/jStat.jsp?forward=productsale</result>
+  			<result name="onlineinfo">/run/stat/jStat.jsp?forward=onlineinfo</result>
+  			<result name="sysinfo">/run/stat/jSysInfo.jsp</result>
+  		</action>
+  	</package>
+</struts>
+

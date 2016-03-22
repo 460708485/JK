@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class name="cn.itcast.entity.SysCode" table="SYS_CODE_B" >
+        <id name="id" type="string" column="SYS_CODE_ID" length="40">
+			<generator class="assigned" />
+		</id>
+        <property name="name" type="string" column="NAME" length="100" />
+        <property name="cnote" type="string" column="CNOTE" length="100" />
+        <property name="layerNum" type="integer" column="LAYER_NUM"/>
+        <property name="isLeaf" type="string" column="IS_LEAF" length="1" />
+        <property name="ico" type="string" column="ICO" length="20" />
+        <property name="state" type="string" column="STATE" length="1" />
+        <property name="quoteNum" type="integer" column="QUOTE_NUM"/>
+        <property name="orderNo" type="integer" column="ORDER_NO"/>
+		
+		<property name="createdBy" type="string" column="CREATED_BY" length="40" />
+		<property name="createdTime" type="timestamp" column="CREATED_TIME" />
+		<property name="updatedBy" type="string" column="UPDATED_BY" length="40" />
+		<property name="updatedTime" type="timestamp" column="UPDATED_TIME" />
+		
+		<many-to-one name="parentSysCode" class="cn.itcast.entity.SysCode" fetch="join">
+            <column name="PARENT_ID" length="40" />
+        </many-to-one>
+        <property name="parentName" type="string" column="PARENT_NAME" length="100" />
+
+	</class>
+</hibernate-mapping>
